@@ -1,11 +1,13 @@
 import collections
 
 file = open('shirley.txt', 'r')
+
+# makes a list of words in the file without all the punctuation
 text = [word.replace(",", "").replace(".", "").replace(";", "")
         .replace(":", "") for line in file for word in line.lower().split()]
 
 
-def histogram():
+def histogram(source_text):
     c = collections.Counter()
     for a in text:
         c[a] += 1
@@ -20,13 +22,13 @@ def unique_words():
 def frequency(word, histogram):
     pass
 
-histogram()
+histogram(text)
 unique_words()
-
-histogram_result = histogram()
-unique_words_result = unique_words()
-
-print(unique_words_result)
+#
+# histogram_result = histogram()
+# unique_words_result = unique_words()
+#
+# print(unique_words_result)
 
 # def word_probability():
 #     print("word probability: " + str(unique_words_result))
