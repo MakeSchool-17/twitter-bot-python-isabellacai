@@ -20,4 +20,15 @@ def unique_words():
 def frequency(word, histogram):
     pass
 
+histogram()
 unique_words()
+
+histogram_result = histogram()
+unique_words_result = unique_words()
+
+print(unique_words_result)
+
+# def word_probability():
+#     print("word probability: " + str(unique_words_result))
+
+# word_probability()
