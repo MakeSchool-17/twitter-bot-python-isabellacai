@@ -7,23 +7,29 @@ text = [word.replace(",", "").replace(".", "").replace(";", "")
         .replace(":", "") for line in file for word in line.lower().split()]
 
 
-def histogram(source_text):
+def create_histogram(source_text):
     c = collections.Counter()
-    for a in text:
+    for a in source_text:
         c[a] += 1
-    print(c)
+    return c
 
 
-def unique_words():
+def unique_words(histogram):
     uniquewords = len(set(w.lower() for w in text))
     print(uniquewords)
 
 
 def frequency(word, histogram):
-    pass
+    print(histogram[word])
 
-histogram(text)
-unique_words()
+
+if __name__ == '__main__':
+    hist = create_histogram(text)
+
+    unique_words(hist)
+
+    frequency("us", hist)
+# frequency(each_word, hist)
 #
 # histogram_result = histogram()
 # unique_words_result = unique_words()
