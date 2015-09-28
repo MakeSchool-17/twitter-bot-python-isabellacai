@@ -1,4 +1,5 @@
 import collections
+import random
 
 file = open('shirley.txt', 'r')
 
@@ -23,20 +24,16 @@ def frequency(word, histogram):
     print(histogram[word])
 
 
+def return_random_word(histogram):
+    print(random.choice(list(create_histogram(text).keys())))
+
+    # print random.sample(create_histogram(source_text).keys())
+
 if __name__ == '__main__':
     hist = create_histogram(text)
 
     unique_words(hist)
 
     frequency("us", hist)
-# frequency(each_word, hist)
-#
-# histogram_result = histogram()
-# unique_words_result = unique_words()
-#
-# print(unique_words_result)
 
-# def word_probability():
-#     print("word probability: " + str(unique_words_result))
-
-# word_probability()
+    return_random_word(hist)
