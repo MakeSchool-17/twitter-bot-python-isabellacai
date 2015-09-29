@@ -14,6 +14,8 @@ def create_histogram(source_text):
         c[a] += 1
     return c
 
+create_histogram(text)
+
 
 def unique_words(histogram):
     uniquewords = len(set(w.lower() for w in text))
