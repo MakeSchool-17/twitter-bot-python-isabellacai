@@ -25,9 +25,25 @@ def frequency(word, histogram):
 
 # probability for each word
 
+#
+# def sumthing():
+#     total = 0
+#     for x in nums:
+#         total += x
+#     print(total)
+#
+# sumthing()
 
-def prob_word(word, histogram, each_unique):
-    print(histogram[word]/each_unique)
+
+def total_words(histogram):
+    total = 0
+    for x in histogram:
+        total += histogram[x]
+    return total
+
+
+def prob_word(word, histogram, words_amount):
+    print(histogram[word]/words_amount)
 
 
 def return_random_word(histogram):
@@ -38,12 +54,16 @@ def return_random_word(histogram):
 if __name__ == '__main__':
     hist = create_histogram(text)
 
-    unique = unique_words(hist)
+    # unique = unique_words(hist)
 
-    unique_words(hist)
+    totwords = total_words(hist)
+
+    print(total_words(hist))
+
+    print(unique_words(hist))
 
     frequency("us", hist)
 
-    prob_word("us", hist, unique)
+    prob_word("us", hist, totwords)
 
     return_random_word(hist)
