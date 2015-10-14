@@ -49,7 +49,8 @@ def prob_word(word, histogram, words_amount):
 def return_random_word(histogram):
     print(random.choice(list(create_histogram(text).keys())))
 
-    # print random.sample(create_histogram(source_text).keys())
+
+# print random.sample(create_histogram(source_text).keys())
 
 if __name__ == '__main__':
     hist = create_histogram(text)
@@ -65,5 +66,8 @@ if __name__ == '__main__':
     frequency("us", hist)
 
     prob_word("us", hist, totwords)
+
+    for word in hist:
+        print(word, hist[word])
 
     return_random_word(hist)

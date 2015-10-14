@@ -18,6 +18,7 @@ for line in input_file.readlines():
     line.rstrip()
     wordlist.append(line)
 
+
 print(wordlist)
 
 for line in input_file.readlines():
