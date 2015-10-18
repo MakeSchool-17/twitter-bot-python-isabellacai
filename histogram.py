@@ -4,8 +4,8 @@ import random
 file = open('shirley.txt', 'r')
 
 # makes a list of words in the file without all the punctuation
-text = [word.replace(",", "").replace(".", "").replace(";", "")
-        .replace(":", "") for line in file for word in line.lower().split()]
+# text = [word.replace(",", "").replace(".", "").replace(";", "")
+#         .replace(":", "") for line in file for word in line.lower().split()]
 
 
 def create_histogram(source_text):
@@ -68,6 +68,6 @@ if __name__ == '__main__':
     prob_word("us", hist, totwords)
 
     for word in hist:
-        print(word, hist[word])
+        print(word, hist[word]/totwords)
 
     return_random_word(hist)
